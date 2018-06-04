@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: cicd-hor-user-build-0.1.{{ build.number }}
+    labels:
+        cicd-hor-user-build: cicd-hor-user-build
+        version: user-0.1.{{ build.number }}
+spec:
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                cicd-hor-user-build: cicd-hor-user-build
+                version: user-0.1.{{ build.number }}
+        spec:
+            containers:
+                - name: cicd-hor-user-build
+                  image: 10.25.0.141:5000/library/hor-user-build:0.1.{{ build.number }}
+                  ports:
+                      - containerPort: 80
+                      

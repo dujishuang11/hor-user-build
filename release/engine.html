@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="horEngineApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="Shortcut Icon" href="img/favicon.png">
+    <title>HOR编排引擎</title>
+
+    <!-- bower:css -->
+    <!-- 这里使用wiredep插件 插入bower.json里依赖的项目 -->
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="static/vendor-950bfc5588.css">
+    <link rel="stylesheet" href="static/engine-e6bdff0902.css">
+    <!-- endinject -->
+
+</head>
+<body ng-controller="EngineController as ctrl" style="background: #e9ebee;overflow: hidden">
+
+<div class="panel">
+    <h5>请选择编排调度引擎</h5>
+    <ul>
+        <li class="driver">
+            <a>
+                <img src="img/Cattle.png">
+                <p>Cattle</p>
+            </a>
+        </li>
+        <li class="driver active">
+            <a>
+                <img src="img/Kubernetes.png">
+                <p>Kubernetes</p>
+            </a>
+        </li>
+        <li class="driver">
+            <a>
+                <img src="img/Mesos.png">
+                <p>Mesos</p>
+            </a>
+        </li>
+        <li class="driver">
+            <a>
+                <img src="img/SwarmKit.png">
+                <p>SwarmKit</p>
+            </a>
+        </li>
+        <li class="driver">
+            <a>
+                <img src="img/Windows.png">
+                <p>Windows (Experimental)</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h3 class="dns"></h3>
+<div class="dns-con" style="display: none">
+    <ul>
+        <li>
+            <p><img src="img/Windows.png"></p>
+            <h5>Bind9 Domain Name Server</h5>
+            <span>in community</span>
+            <p class="dns-detail">Bind9 DNS server, compatible with the "DNS Update (RFC2136)"</p>
+            <button>Enable</button>
+
+        </li>
+        <li>
+            <p><img src="img/Windows.png"></p>
+            <h5>Bind9 Domain Name Server</h5>
+            <span>in community</span>
+            <p class="dns-detail">Bind9 DNS server, compatible with the "DNS Update (RFC2136)"</p>
+            <button>Enable</button>
+
+        </li>
+        <li>
+            <p class="driver"><img src="img/Windows.png"></p>
+            <h5>Bind9 Domain Name Server</h5>
+            <span>in community</span>
+            <p class="dns-detail">Bind9 DNS server, compatible with the "DNS Update (RFC2136)"</p>
+            <button>Enable</button>
+
+        </li>
+        <li>
+            <p class="driver"><img src="img/Windows.png"></p>
+            <h5>Bind9 Domain Name Server</h5>
+            <span>in community</span>
+            <p class="dns-detail">Bind9 DNS server, compatible with the "DNS Update (RFC2136)"</p>
+            <button>Enable</button>
+
+        </li>
+        <li>
+            <p class="driver"><img src="img/Windows.png"></p>
+            <h5>Bind9 Domain Name Server</h5>
+            <span>in community</span>
+            <p class="dns-detail">Bind9 DNS server, compatible with the "DNS Update (RFC2136)"</p>
+            <button>Enable</button>
+
+        </li>
+    </ul>
+</div>
+<div class="engine-footer">
+    <button ng-click="ctrl.goIndex()">确定</button>
+    <button class="default-btn" ng-click="ctrl.goLogin()">返回登录</button>
+</div>
+
+<!-- bower:js -->
+<!-- 这里使用wiredep插件 插入bower.json里依赖的项目 -->
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="static/vendor-d3f6fd5f5d.js"></script>
+<script src="static/conf.js"></script>
+<script src="static/engine-cee5d7c25d.js"></script>
+<!-- endinject -->
+
+</body>
+</html>

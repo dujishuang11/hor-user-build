@@ -1,0 +1,3 @@
+<md-dialog aria-label="" class="md-dialog-new" style="width:600px;"> <form ng-cloak name="add_form"> <md-dialog-header> <h2 class="md-title">{{"Please add license"|I18N}}</h2> </md-dialog-header> <md-dialog-content class="binding"> <textarea rows="10" cols="30" ng-model="$ctrl.obj.name" class="">
+
+                </textarea> </md-dialog-content> <md-dialog-actions layout="row"> <span flex></span> <md-button ng-click="$ctrl.cancel()" class="btn btn-default"> {{"Cancel"|I18N}} </md-button> <md-button class="btn btn-success" ng-disabled="add_form.$invalid " ng-click="$ctrl.answer($ctrl.obj.name)"> {{"Ok"|I18N}} </md-button> </md-dialog-actions> </form> </md-dialog>

@@ -1,0 +1,1 @@
+<md-card ng-if="$ctrl.shouldShowGraph()"> <label>{{$ctrl.graphTitle}} <span ng-if="::$ctrl.graphInfo"> <md-icon md-font-library="material-icons">info</md-icon> <md-tooltip>{{::$ctrl.graphInfo}}</md-tooltip> </span> </label> <md-content> <hor-graph metrics="::$ctrl.selectedMetrics"></hor-graph> </md-content> </md-card>

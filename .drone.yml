@@ -1,0 +1,28 @@
+workspace:
+    base: /drone
+    path: release/
+pipeline:
+    publish-master:
+        image: neunnsy/docker:v0.0.1
+        registry: 10.25.0.141:5000
+        username: admin
+        password: 12345678
+        repo: 10.25.0.141:5000/library/hor-user-build
+        tag: 0.1.${DRONE_BUILD_NUMBER}
+        file: Dockerfile
+        insecure: false
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        privileged: true
+        trusted: true
+        when:
+            branch: master
+            status: [ success ]
+    kubernetes-master:
+        image: vallard/drone-kube
+        template: deployment.yml
+        namespace: default
+        secrets: [ KUBE_CA, KUBE_TOKEN, KUBE_SERVER ]
+        when:
+            branch: master
+            status: [ success ]

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="horLoginApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="Shortcut Icon" href="img/favicon.png">
+    <title>东网HOR超融合用户平台登录</title>
+
+    <!-- bower:css -->
+    <!-- 这里使用wiredep插件 插入bower.json里依赖的项目 -->
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="static/vendor-950bfc5588.css">
+    <link rel="stylesheet" href="static/login-c7dbc3b480.css">
+    <!-- endinject -->
+</head>
+<body ng-controller="LoginController as ctrl" class="login-bg">
+<div class="box">
+    <div class="img-left">
+        <h1>东网HOR超融合用户平台</h1>
+        <p>用户方</p>
+    </div>
+    <div class="login-container">
+        <div class="login-logo">
+            <!-- <img src="img/login-logo.png"> -->
+        </div>
+        <div class="login-form">
+            <div class="logo">用户方登录</div>
+            <h2 class="login-tit">欢迎您登录东网HOR超融合用户平台！</h2>
+            <form class="form-signin" novalidate name="loginForm" id="loginForm" ng-submit="ctrl.loginSubmit()">
+                <input type="text" id="id_username" name="name" placeholder="请输入用户名" autofocus
+                       ng-model="ctrl.user.name" ng-change="ctrl.changeName()" required >
+                    <span ng-show="loginForm.name.$dirty && loginForm.name.$invalid">
+                         <span ng-show="loginForm.name.$error.required" class="error-msg">请输入用户名</span>
+                    </span>
+                    <input type="password" id="password" name="password" placeholder="请输入密码"
+                       ng-model="ctrl.user.password"  ng-change="ctrl.changePassword()" required >
+                    <span ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                         <span ng-show="loginForm.password.$error.required"  class="error-msg">请输入密码</span>
+                    </span>
+                <span class="error-msg" ng-hide="!ctrl.serverError">{{ctrl.serverError}}</span>
+                <button type="submit" ng-disabled="loginForm.$invalid">登录</button>
+            </form>
+            <p class="login-text">东网HOR超融合用户平台 {{ctrl.horVersionNo}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- bower:js -->
+<!-- 这里使用wiredep插件 插入bower.json里依赖的项目 -->
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="static/vendor-d3f6fd5f5d.js"></script>
+<script src="static/conf.js"></script>
+<script src="static/login-da1934b854.js"></script>
+<!-- endinject -->
+
+</body>
+</html>
